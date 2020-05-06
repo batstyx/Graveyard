@@ -3,4 +3,4 @@
 [![Latest Release](https://img.shields.io/github/release-pre/batstyx/Graveyard.svg)](https://github.com/batstyx/Graveyard/releases)
 
 Forked from [RedHatter/Graveyard](https://github.com/RedHatter/Graveyard) 
-(see for instructions/details)
+(see there for instructions/details)
