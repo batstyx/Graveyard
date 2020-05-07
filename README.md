@@ -4,3 +4,5 @@
 
 Forked from [RedHatter/Graveyard](https://github.com/RedHatter/Graveyard) 
 (see there for instructions/details)
+
+Clone [batstyx/Graveyard/master](https://github.com/batstyx/Graveyard/tree/master)
