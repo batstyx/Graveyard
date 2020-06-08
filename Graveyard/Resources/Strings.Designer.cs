@@ -190,13 +190,13 @@ namespace HDT.Plugins.Graveyard.Resources {
         ///   Looks up a localized string similar to Displays minions that have died this game. Includes specialized displays:
         ///- Deathrattle minions (Nine Lives/Da Undatakah/Twilight&apos;s Call/N&apos;Zoth)
         ///- Taunt minions (Hadronox)
-        ///- Demons (Bloodreaver Gul&apos;dan)
+        ///- Demon deaths (Bloodreaver Gul&apos;dan/Kanrethad Ebonlocke)
         ///- Resurrection chance (Catrina Muerte/Mass Resurrection/Wild Priest cards)
         ///- Murloc minions with a damage calculator for Anyfin Can Happen
         ///- Discard retrieve chance (Soulwarden/Cruel Dinomancer) 
         ///- Treant deaths (Mulchmuncher)
         ///- Mech deaths (Kangor&apos;s Endless Army)
-        ///- 5-cost spells (Dragoncaller Alann [rest of string was truncated]&quot;;.
+        ///- Spells  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GraveyardDescription {
             get {
@@ -205,7 +205,7 @@ namespace HDT.Plugins.Graveyard.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bloodreaver Gul&apos;dan.
+        ///   Looks up a localized string similar to Demons.
         /// </summary>
         public static string Guldan {
             get {
@@ -214,7 +214,7 @@ namespace HDT.Plugins.Graveyard.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to When the deck contains &apos;Bloodreaver Gul&apos;dan&apos;, show demons that have died.
+        ///   Looks up a localized string similar to When the deck contains &apos;Bloodreaver Gul&apos;dan&apos; or &apos;Kanrethad Ebonlocke&apos;, show demons that have died.
         /// </summary>
         public static string GuldanDescription {
             get {
@@ -291,6 +291,24 @@ namespace HDT.Plugins.Graveyard.Resources {
         public static string KazakusDescription {
             get {
                 return ResourceManager.GetString("KazakusDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lady Liadrin.
+        /// </summary>
+        public static string LadyLiadrin {
+            get {
+                return ResourceManager.GetString("LadyLiadrin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When the deck contains &apos;Lady Liadrin&apos;, show all spells cast on friendly characters this game..
+        /// </summary>
+        public static string LadyLiadrinDescription {
+            get {
+                return ResourceManager.GetString("LadyLiadrinDescription", resourceCulture);
             }
         }
         
