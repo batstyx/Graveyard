@@ -201,6 +201,9 @@ This version built from https://github.com/batstyx/Graveyard</value>
   <data name="HoardPillagerDescription" xml:space="preserve">
     <value>When the deck contains 'Hoard Pillager' or 'Rummaging Kobold', show equip/return chance of weapons used this game.</value>
   </data>
+  <data name="Horizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
   <data name="Kangor" xml:space="preserve">
     <value>Kangor's Endless Army</value>
   </data>
@@ -249,6 +252,12 @@ This version built from https://github.com/batstyx/Graveyard</value>
   <data name="OpponentDescription" xml:space="preserve">
     <value>All enemy minions that have died</value>
   </data>
+  <data name="Orientation" xml:space="preserve">
+    <value>Orientation</value>
+  </data>
+  <data name="OrientationDescription" xml:space="preserve">
+    <value>Vertical or Horizontal view stacking</value>
+  </data>
   <data name="Rally" xml:space="preserve">
     <value>Rally!</value>
   </data>
@@ -290,6 +299,9 @@ This version built from https://github.com/batstyx/Graveyard</value>
   </data>
   <data name="Unlock" xml:space="preserve">
     <value>Unlock Graveyards</value>
+  </data>
+  <data name="Vertical" xml:space="preserve">
+    <value>Vertical</value>
   </data>
   <data name="WitchingHour" xml:space="preserve">
     <value>Witching Hour</value>
