@@ -75,11 +75,14 @@
     <Compile Include="ChancesTracker.cs" />
     <Compile Include="DeathrattleView.cs" />
     <Compile Include="DragoncallerAlannaView.cs" />
+    <Compile Include="ElwynnBoarView.cs" />
     <Compile Include="EnumToBoolConverter.cs" />
+    <Compile Include="AntonidasView.cs" />
     <Compile Include="HadronoxView.cs" />
     <Compile Include="GuldanView.cs" />
     <Compile Include="HoardPillagerView.cs" />
     <Compile Include="KangorView.cs" />
+    <Compile Include="KargalView.cs" />
     <Compile Include="LadyLiadrinView.cs" />
     <Compile Include="MulchmuncherView.cs" />
     <Compile Include="NZothGotDView.cs" />

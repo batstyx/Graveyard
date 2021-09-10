@@ -442,5 +442,53 @@ namespace HDT.Plugins.Graveyard {
                 this["YShaarjEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ElwynnBoarEnabled {
+            get {
+                return ((bool)(this["ElwynnBoarEnabled"]));
+            }
+            set {
+                this["ElwynnBoarEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AlwaysBoarSeparately {
+            get {
+                return ((bool)(this["AlwaysBoarSeparately"]));
+            }
+            set {
+                this["AlwaysBoarSeparately"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool KargalEnabled {
+            get {
+                return ((bool)(this["KargalEnabled"]));
+            }
+            set {
+                this["KargalEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AntonidusEnabled {
+            get {
+                return ((bool)(this["AntonidusEnabled"]));
+            }
+            set {
+                this["AntonidusEnabled"] = value;
+            }
+        }
     }
 }

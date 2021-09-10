@@ -123,11 +123,23 @@
   <data name="AlannaDescription" xml:space="preserve">
     <value>When the deck contains 'Dragoncaller Alanna', show spells that cost 5 or more that have been played.</value>
   </data>
+  <data name="AlwaysBoarSeparately" xml:space="preserve">
+    <value>Always 'Elwynn Boar' separately</value>
+  </data>
+  <data name="AlwaysBoarSeparatelyDescription" xml:space="preserve">
+    <value>Show a separate view for 'Elwynn Boar' even when the Deathrattle view is active.</value>
+  </data>
   <data name="AlwaysRallySeparately" xml:space="preserve">
     <value>Always Rally! separately</value>
   </data>
   <data name="AlwaysRallySeparatelyDescription" xml:space="preserve">
     <value>Show a separate view for Rally! even when the Resurrect view is active</value>
+  </data>
+  <data name="Antonidas" xml:space="preserve">
+    <value>Grand Magus Antonidas</value>
+  </data>
+  <data name="AntonidasDescription" xml:space="preserve">
+    <value>When the deck contains 'Grand Magus Antonidas' show the Fire spells cast for each of the last three played turns.</value>
   </data>
   <data name="Anyfin" xml:space="preserve">
     <value>Anyfin</value>
@@ -155,6 +167,12 @@
   </data>
   <data name="DiscardTitle" xml:space="preserve">
     <value>Discarded Minions</value>
+  </data>
+  <data name="ElwynnBoar" xml:space="preserve">
+    <value>Elwynn Boar</value>
+  </data>
+  <data name="ElwynnBoarDescription" xml:space="preserve">
+    <value>When the deck contains one or more 'Elwynn Boar', show number of friendly boar to die this game.</value>
   </data>
   <data name="Friendly" xml:space="preserve">
     <value>Friendly</value>
@@ -209,6 +227,12 @@ This version built from https://github.com/batstyx/Graveyard</value>
   </data>
   <data name="KangorDescription" xml:space="preserve">
     <value>When the deck contains 'Kangor's Endless Army', show summon chance of friendly (base) Mechs that have died</value>
+  </data>
+  <data name="Kargal" xml:space="preserve">
+    <value>Kargal Battlescar</value>
+  </data>
+  <data name="KargalDescription" xml:space="preserve">
+    <value>When the deck contains 'Kargal Battlescar', show all 'Posts' that have been played this game.</value>
   </data>
   <data name="Kazakus" xml:space="preserve">
     <value>Kazakus</value>

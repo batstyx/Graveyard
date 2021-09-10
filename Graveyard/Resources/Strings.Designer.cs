@@ -79,6 +79,24 @@ namespace HDT.Plugins.Graveyard.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Always &apos;Elwynn Boar&apos; separately.
+        /// </summary>
+        public static string AlwaysBoarSeparately {
+            get {
+                return ResourceManager.GetString("AlwaysBoarSeparately", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show a separate view for &apos;Elwynn Boar&apos; even when the Deathrattle view is active..
+        /// </summary>
+        public static string AlwaysBoarSeparatelyDescription {
+            get {
+                return ResourceManager.GetString("AlwaysBoarSeparatelyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Always Rally! separately.
         /// </summary>
         public static string AlwaysRallySeparately {
@@ -93,6 +111,24 @@ namespace HDT.Plugins.Graveyard.Resources {
         public static string AlwaysRallySeparatelyDescription {
             get {
                 return ResourceManager.GetString("AlwaysRallySeparatelyDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Grand Magus Antonidas.
+        /// </summary>
+        public static string Antonidas {
+            get {
+                return ResourceManager.GetString("Antonidas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When the deck contains &apos;Grand Magus Antonidas&apos; show the Fire spells cast for each of the last three played turns..
+        /// </summary>
+        public static string AntonidasDescription {
+            get {
+                return ResourceManager.GetString("AntonidasDescription", resourceCulture);
             }
         }
         
@@ -174,6 +210,24 @@ namespace HDT.Plugins.Graveyard.Resources {
         public static string DiscardTitle {
             get {
                 return ResourceManager.GetString("DiscardTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Elwynn Boar.
+        /// </summary>
+        public static string ElwynnBoar {
+            get {
+                return ResourceManager.GetString("ElwynnBoar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When the deck contains one or more &apos;Elwynn Boar&apos;, show number of friendly boar to die this game..
+        /// </summary>
+        public static string ElwynnBoarDescription {
+            get {
+                return ResourceManager.GetString("ElwynnBoarDescription", resourceCulture);
             }
         }
         
@@ -300,6 +354,24 @@ namespace HDT.Plugins.Graveyard.Resources {
         public static string KangorDescription {
             get {
                 return ResourceManager.GetString("KangorDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kargal Battlescar.
+        /// </summary>
+        public static string Kargal {
+            get {
+                return ResourceManager.GetString("Kargal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When the deck contains &apos;Kargal Battlescar&apos;, show all &apos;Posts&apos; that have been played this game..
+        /// </summary>
+        public static string KargalDescription {
+            get {
+                return ResourceManager.GetString("KargalDescription", resourceCulture);
             }
         }
         
