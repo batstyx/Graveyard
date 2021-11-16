@@ -38,6 +38,8 @@ namespace HDT.Plugins.Graveyard
 		public ElwynnBoarView ElwynnBoar;
 		public KargalView Kargal;
 		public AntonidasView Antonidas;
+		public GrandFinaleView GrandFinale;
+		public LastPlayedView LastPlayed;
 
 		private StackPanel _friendlyPanel;
 		private StackPanel _enemyPanel;
@@ -349,12 +351,31 @@ namespace HDT.Plugins.Graveyard
             {
 				Antonidas = null;
             }
+            if (Settings.Default.GrandFinaleEnabled && GrandFinaleView.isValid())
+            {
+				GrandFinale = new GrandFinaleView();
+				_friendlyPanel.Children.Add(GrandFinale);
+            }
+            else
+            {
+				GrandFinale = null;
+            }
+			if (LastPlayedView.IsValid())
+            {
+				LastPlayed = new LastPlayedView();
+				_friendlyPanel.Children.Add(LastPlayed);
+            }
+			else
+            {
+				LastPlayed = null;
+            }
 		}
 
 		public void PlayerGraveyardUpdate(Card card)
 		{
 			var any = Anyfin?.Update(card) ?? false;
             var deathrattle = Deathrattle?.Update(card) ?? false;
+			LastPlayed?.UpdateMonstrousParrot(card);
             var nzoth = NZoth?.Update(card) ?? false;
 			var hadr = Hadronox?.Update(card) ?? false;
 			var guldan = Guldan?.Update(card) ?? false;
@@ -398,14 +419,23 @@ namespace HDT.Plugins.Graveyard
 		public void PlayerPlayUpdate(Card card)
 		{
 			Shudderwock?.Update(card);
+			LastPlayed?.UpdateBrilliantMacaw(card);
 			DragoncallerAlanna?.Update(card);
+			LastPlayed?.UpdateGreySageParrot(card);
             Caverns?.Update(card);
             TessGreymane?.Update(card);
 			Zuljin?.Update(card);
 			LadyLiadrin?.Update(card);
+			LastPlayed?.UpdateSunwingSquawker(card);
 			YShaarj?.Update(card);
 			Kargal?.Update(card);
 			Antonidas?.Update(card);
+			GrandFinale?.Update(card);			
+        }
+
+		public void OpponentPlayUpdate(Card card)
+        {
+			LastPlayed?.UpdateVanessaVanCleef(card);
         }
 
 		public async void TurnStartUpdate(Hearthstone_Deck_Tracker.Enums.ActivePlayer player)
@@ -413,6 +443,7 @@ namespace HDT.Plugins.Graveyard
 			if (player == Hearthstone_Deck_Tracker.Enums.ActivePlayer.Opponent)
             {
 				if (Antonidas != null) await Antonidas.TurnEnded();
+				if (GrandFinale != null) await GrandFinale.TurnEnded();
 			}
 		}
 	}
