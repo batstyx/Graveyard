@@ -18,19 +18,11 @@ namespace HDT.Plugins.Graveyard
 			});
 		}
 
-		private static bool IsHedra(Card card) => card.Id == Druid.HedraTheHeretic;
-		private bool HedraInHand = false;
+		internal InHandAssistant InHand = new InHandAssistant(Druid.HedraTheHeretic);
 
 		public override bool Update(Card card)
-        {
-			if (HedraInHand && IsHedra(card)) HedraInHand = false;
-			return HedraInHand && base.Update(card);
-        }
-
-		public bool PlayerPlayToHand(Card card)
-        {
-			if (!HedraInHand && IsHedra(card)) HedraInHand = true;
-			return HedraInHand;
+        {			
+			return InHand.Check(card) && base.Update(card);
         }
 
         internal class HedraViewConfig : ViewConfig
@@ -45,7 +37,7 @@ namespace HDT.Plugins.Graveyard
 				base.RegisterView(view, isDefault);
                 if (view is HedraView hedraview)
                 {
-					RegisterForCardEvent(GameEvents.OnPlayerPlayToHand, hedraview.PlayerPlayToHand);
+					RegisterForCardEvent(GameEvents.OnPlayerPlayToHand, hedraview.InHand.IsPlayedTo);
 				}
 				
 			}

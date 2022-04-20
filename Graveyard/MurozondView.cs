@@ -24,21 +24,13 @@ namespace HDT.Plugins.Graveyard
 		}
 		public MurozondView() : base(1) { }
 
-		private static bool IsMurozond(Card card) => card.Id == Priest.MurozondTheInfinite1810;
-		private bool MurozondInHand = false;
+		internal InHandAssistant InHand = new InHandAssistant(Priest.MurozondTheInfinite1810);
 
-        public override bool Update(Card card)
+		public override bool Update(Card card)
         {
-            if (MurozondInHand && IsMurozond(card)) MurozondInHand = false;
-            return MurozondInHand && base.Update(card);
+            return InHand.Check(card) && base.Update(card);
         }
-
-        public bool PlayerPlayToHand(Card card)
-		{
-			if (!MurozondInHand && IsMurozond(card)) MurozondInHand = true;
-			return MurozondInHand;
-		}
-
+		 
 		internal class MurozondViewConfig : ViewConfig
 		{
 			public MurozondViewConfig() : base(Priest.MurozondTheInfinite1810)
@@ -51,7 +43,7 @@ namespace HDT.Plugins.Graveyard
 				base.RegisterView(view, isDefault);
                 if (view is MurozondView murozondview)
                 {
-                    RegisterForCardEvent(GameEvents.OnPlayerPlayToHand, murozondview.PlayerPlayToHand);
+                    RegisterForCardEvent(GameEvents.OnPlayerPlayToHand, murozondview.InHand.IsPlayedTo);
                 }
             }
 		}
