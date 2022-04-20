@@ -11,7 +11,8 @@ namespace HDT.Plugins.Graveyard
 {
     internal class EventManager
     {
-		public TurnUpdatePoller OnOpponentTurnStart { get; } = new TurnUpdatePoller(ActivePlayer.Opponent);
+        public TurnUpdatePoller OnPlayedTurnStart { get; } = new TurnUpdatePoller(ActivePlayer.Player);
+        public TurnUpdatePoller OnOpponentTurnStart { get; } = new TurnUpdatePoller(ActivePlayer.Opponent);
 		public CardUpdatePoller OnPlayerPlayToGraveyard { get; } = new CardUpdatePoller();
 		public CardUpdatePoller OnOpponentPlayToGraveyard { get; } = new CardUpdatePoller();
 		public CardUpdatePoller OnPlayerPlay { get; } = new CardUpdatePoller();
@@ -28,7 +29,8 @@ namespace HDT.Plugins.Graveyard
 
 			OnPlayerHandDiscard.Clear();
 
-			OnOpponentTurnStart.Clear();
+            OnPlayedTurnStart.Clear();
+            OnOpponentTurnStart.Clear();
 		}
 
 		public CardUpdatePoller MapCardEvent(ActionList<Card> actionList)

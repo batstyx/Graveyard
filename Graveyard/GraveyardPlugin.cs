@@ -48,6 +48,7 @@ namespace HDT.Plugins.Graveyard
             GameEvents.OnPlayerPlay.Add(Events.OnPlayerPlay.Poll);
             GameEvents.OnOpponentPlay.Add(Events.OnOpponentPlay.Poll);
 
+            GameEvents.OnTurnStart.Add(Events.OnPlayedTurnStart.Poll);
             GameEvents.OnTurnStart.Add(Events.OnOpponentTurnStart.Poll);
 
             UpdateSelectedDeck(DeckList.Instance.ActiveDeck);
