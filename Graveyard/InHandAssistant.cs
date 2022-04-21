@@ -12,8 +12,9 @@ namespace HDT.Plugins.Graveyard
         private readonly string CardId;
 
         private bool IsCard(Card card) => card.Id == CardId;
-        
-        public bool Value { get; private set; } = false;
+
+        public int Count { get; private set; } = 0;
+        public bool Value => Count > 0;
 
         public InHandAssistant(string cardId)
         {
@@ -23,14 +24,14 @@ namespace HDT.Plugins.Graveyard
         // If the card is in hand, check if the card is being played 
         public bool Check(Card card)
         {
-            if (Value && IsCard(card)) Value = false;
+            if (Value && IsCard(card)) Count -= 1;
             return Value;
         }
 
         // If the card isn't already in hand, check if the card is being played to hand
         public bool IsPlayedTo(Card card)
         {
-            if (!Value && IsCard(card)) Value = true;
+            if (!Value && IsCard(card)) Count += 1;
             return Value;
         }
     }

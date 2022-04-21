@@ -75,6 +75,7 @@
     <Compile Include="EventManager.cs" />
     <Compile Include="GraveyardView.cs" />
     <Compile Include="HedraView.cs" />
+    <Compile Include="InHandAssistant.cs" />
     <Compile Include="JaceDarkweaverView.cs" />
     <Compile Include="KeyToLocalizedConverter.cs" />
     <Compile Include="MurozondView.cs" />
