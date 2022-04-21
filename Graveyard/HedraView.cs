@@ -37,7 +37,7 @@ namespace HDT.Plugins.Graveyard
 				base.RegisterView(view, isDefault);
                 if (view is HedraView hedraview)
                 {
-					RegisterForCardEvent(GameEvents.OnPlayerPlayToHand, hedraview.InHand.IsPlayedTo);
+					RegisterForCardEvent(GameEvents.OnPlayerPlayToHand, hedraview.InHand.Incoming);
 				}
 				
 			}

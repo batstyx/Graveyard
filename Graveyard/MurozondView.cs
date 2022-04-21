@@ -43,8 +43,9 @@ namespace HDT.Plugins.Graveyard
 				base.RegisterView(view, isDefault);
                 if (view is MurozondView murozondview)
                 {
-                    RegisterForCardEvent(GameEvents.OnPlayerPlayToHand, murozondview.InHand.IsPlayedTo);
-                }
+					RegisterForCardEvent(GameEvents.OnPlayerDraw, murozondview.InHand.Incoming);
+					RegisterForCardEvent(GameEvents.OnPlayerPlayToHand, murozondview.InHand.Incoming);				
+				}
             }
 		}
 	}

@@ -1,4 +1,5 @@
 ﻿using Hearthstone_Deck_Tracker.Hearthstone;
+using Hearthstone_Deck_Tracker.Utility.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,17 +22,17 @@ namespace HDT.Plugins.Graveyard
             CardId = cardId;
         }
 
-        // If the card is in hand, check if the card is being played 
         public bool Check(Card card)
         {
-            if (Value && IsCard(card)) Count -= 1;
+            if (IsCard(card)) Count -= 1;
+            if (Value) Log.Info($"{Database.GetCardFromId(CardId).Name} still in hand");
             return Value;
         }
 
-        // If the card isn't already in hand, check if the card is being played to hand
-        public bool IsPlayedTo(Card card)
+        public bool Incoming(Card card)
         {
-            if (!Value && IsCard(card)) Count += 1;
+            if (IsCard(card)) Count += 1;
+            if (Value) Log.Info($"{Database.GetCardFromId(CardId).Name} played to hand");
             return Value;
         }
     }
