@@ -97,6 +97,16 @@ namespace HDT.Plugins.Graveyard
 					return 1;
 				}
 			}
-		}       
-    }
+		}
+
+        private void ButtonResetPlayerPosition_Click(object sender, RoutedEventArgs e) => Settings.Default.ResetPlayerPosition();
+
+		private void ButtonResetPlayerDisplay_Click(object sender, RoutedEventArgs e) => Settings.Default.ResetPlayerDisplay();
+
+		private void ButtonResetOpponentPosition_Click(object sender, RoutedEventArgs e) => Settings.Default.ResetOpponentPosition();
+
+		private void ButtonResetOpponentDisplay_Click(object sender, RoutedEventArgs e) => Settings.Default.ResetOpponentDisplay();
+
+
+}
 }

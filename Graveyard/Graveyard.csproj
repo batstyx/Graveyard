@@ -77,6 +77,7 @@
     <Compile Include="HedraView.cs" />
     <Compile Include="JaceDarkweaverView.cs" />
     <Compile Include="KeyToLocalizedConverter.cs" />
+    <Compile Include="Settings.Default.cs" />
     <Compile Include="SettingsCard.cs" />
     <Compile Include="ViewBuilder.cs" />
     <Compile Include="ViewConfigCards.cs" />

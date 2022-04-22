@@ -610,5 +610,29 @@ namespace HDT.Plugins.Graveyard {
                 this["OpponentDeathrattleEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public string MaxTop {
+            get {
+                return ((string)(this["MaxTop"]));
+            }
+            set {
+                this["MaxTop"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public string MaxLeft {
+            get {
+                return ((string)(this["MaxLeft"]));
+            }
+            set {
+                this["MaxLeft"] = value;
+            }
+        }
     }
 }

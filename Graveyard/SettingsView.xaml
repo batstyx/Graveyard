@@ -57,6 +57,12 @@
             <Style x:Key="SliderPanelStyle" TargetType="DockPanel">
                 <Setter Property="Margin" Value="10,0" />
             </Style>
+            <Style
+                x:Key="PositionGroupStyle"
+                BasedOn="{StaticResource MetroGroupBox}"
+                TargetType="GroupBox">
+                <Setter Property="Margin" Value="5" />
+            </Style>
             <Style x:Key="SliderStyle" TargetType="Slider">
                 <Setter Property="IsSnapToTickEnabled" Value="True" />
                 <Setter Property="TickFrequency" Value="1" />
@@ -85,6 +91,16 @@
                 <Setter Property="TextAlignment" Value="Right" />
                 <Setter Property="Width" Value="40" />
                 <Setter Property="Margin" Value="0,0,10,0" />
+            </Style>
+            <Style x:Key="ResetToDefaultSeparatorStyle" TargetType="Separator">
+                <Setter Property="Height" Value="10" />
+            </Style>
+            <Style
+                x:Key="ResetToDefaultButtonStyle"
+                BasedOn="{StaticResource MetroButton}"
+                TargetType="Button">
+                <Setter Property="Width" Value="150" />
+                <Setter Property="Height" Value="10" />
             </Style>
             <Style x:Key="CheckboxStyle" TargetType="CheckBox">
                 <Setter Property="Margin" Value="12,0,0,4" />
@@ -121,7 +137,7 @@
     <Expander
         Grid.Row="1"
         Header="{lex:Loc Help}"
-        IsExpanded="false"
+        IsExpanded="False"
         Style="{StaticResource ExpanderStyle}">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -171,6 +187,52 @@
                 IsChecked="{Binding DeathrattleEnabled, Source={x:Static local:Settings.Default}}"
                 Style="{StaticResource ToggleStyle}"
                 ToolTip="{lex:Loc DeathrattleDescription}" />
+            <GroupBox Header="{lex:Loc PositionTitle}">
+                <StackPanel>
+                    <DockPanel Style="{StaticResource SliderPanelStyle}">
+                        <Slider
+                            x:Name="SliderPlayerLeft"
+                            DockPanel.Dock="Right"
+                            Maximum="{Binding MaxLeft, Source={x:Static local:Settings.Default}}"
+                            Style="{StaticResource SliderStyle}"
+                            ToolTip="{lex:Loc SettingsHorizontalTooltip}"
+                            Value="{Binding PlayerLeft, Source={x:Static local:Settings.Default}}" />
+                        <Label
+                            VerticalAlignment="Center"
+                            Content="{lex:Loc SettingsHorizontal}"
+                            DockPanel.Dock="Left"
+                            ToolTip="{lex:Loc SettingsHorizontalTooltip}" />
+                        <TextBlock
+                            DockPanel.Dock="Right"
+                            Style="{StaticResource SliderTextStyle}"
+                            Text="{Binding PlayerLeft, Source={x:Static local:Settings.Default}, StringFormat={}{0}%}" />
+                    </DockPanel>
+                    <DockPanel Style="{StaticResource SliderPanelStyle}">
+                        <Slider
+                            x:Name="SliderPlayerTop"
+                            DockPanel.Dock="Right"
+                            Maximum="{Binding MaxTop, Source={x:Static local:Settings.Default}}"
+                            Style="{StaticResource SliderStyle}"
+                            ToolTip="{lex:Loc SettingsVerticalTooltip}"
+                            Value="{Binding PlayerTop, Source={x:Static local:Settings.Default}}" />
+                        <Label
+                            VerticalAlignment="Center"
+                            Content="{lex:Loc SettingsVertical}"
+                            DockPanel.Dock="Left"
+                            ToolTip="{lex:Loc SettingsVerticalTooltip}" />
+                        <TextBlock
+                            DockPanel.Dock="Right"
+                            Style="{StaticResource SliderTextStyle}"
+                            Text="{Binding PlayerTop, Source={x:Static local:Settings.Default}, StringFormat={}{0}%}" />
+                    </DockPanel>
+                    <Separator Style="{StaticResource ResetToDefaultSeparatorStyle}" />
+                    <Button
+                        Name="ButtonResetPlayerPosition"
+                        Click="ButtonResetPlayerPosition_Click"
+                        Content="{lex:Loc PositionResetButton}"
+                        Style="{StaticResource ResetToDefaultButtonStyle}" />
+                </StackPanel>
+            </GroupBox>
             <GroupBox Header="{lex:Loc SettingsDisplayTitle}">
                 <StackPanel>
                     <DockPanel Style="{StaticResource SliderPanelStyle}">
@@ -224,6 +286,12 @@
                             Content="{lex:Loc Orientation}"
                             DockPanel.Dock="Left" />
                     </DockPanel>
+                    <Separator Style="{StaticResource ResetToDefaultSeparatorStyle}" />
+                    <Button
+                        Name="ButtonResetPlayerDisplay"
+                        Click="ButtonResetPlayerDisplay_Click"
+                        Content="{lex:Loc DisplayResetButton}"
+                        Style="{StaticResource ResetToDefaultButtonStyle}" />
                 </StackPanel>
             </GroupBox>
         </StackPanel>
@@ -248,6 +316,52 @@
                 IsChecked="{Binding OpponentDeathrattleEnabled, Source={x:Static local:Settings.Default}}"
                 Style="{StaticResource ToggleStyle}"
                 ToolTip="{lex:Loc OpponentDeathrattleDescription}" />
+            <GroupBox Header="{lex:Loc PositionTitle}">
+                <StackPanel>
+                    <DockPanel Style="{StaticResource SliderPanelStyle}">
+                        <Slider
+                            x:Name="SliderOpponentLeft"
+                            DockPanel.Dock="Right"
+                            Maximum="{Binding MaxLeft, Source={x:Static local:Settings.Default}}"
+                            Style="{StaticResource SliderStyle}"
+                            ToolTip="{lex:Loc SettingsHorizontalTooltip}"
+                            Value="{Binding EnemyLeft, Source={x:Static local:Settings.Default}}" />
+                        <Label
+                            VerticalAlignment="Center"
+                            Content="{lex:Loc SettingsHorizontal}"
+                            DockPanel.Dock="Left"
+                            ToolTip="{lex:Loc SettingsHorizontalTooltip}" />
+                        <TextBlock
+                            DockPanel.Dock="Right"
+                            Style="{StaticResource SliderTextStyle}"
+                            Text="{Binding EnemyLeft, Source={x:Static local:Settings.Default}, StringFormat={}{0}%}" />
+                    </DockPanel>
+                    <DockPanel Style="{StaticResource SliderPanelStyle}">
+                        <Slider
+                            x:Name="SliderOpponentTop"
+                            DockPanel.Dock="Right"
+                            Maximum="{Binding MaxTop, Source={x:Static local:Settings.Default}}"
+                            Style="{StaticResource SliderStyle}"
+                            ToolTip="{lex:Loc SettingsVerticalTooltip}"
+                            Value="{Binding EnemyTop, Source={x:Static local:Settings.Default}}" />
+                        <Label
+                            VerticalAlignment="Center"
+                            Content="{lex:Loc SettingsVertical}"
+                            DockPanel.Dock="Left"
+                            ToolTip="{lex:Loc SettingsVerticalTooltip}" />
+                        <TextBlock
+                            DockPanel.Dock="Right"
+                            Style="{StaticResource SliderTextStyle}"
+                            Text="{Binding EnemyTop, Source={x:Static local:Settings.Default}, StringFormat={}{0}%}" />
+                    </DockPanel>
+                    <Separator Style="{StaticResource ResetToDefaultSeparatorStyle}" />
+                    <Button
+                        Name="ButtonResetOpponentPosition"
+                        Click="ButtonResetOpponentPosition_Click"
+                        Content="{lex:Loc PositionResetButton}"
+                        Style="{StaticResource ResetToDefaultButtonStyle}" />
+                </StackPanel>
+            </GroupBox>
             <GroupBox Header="{lex:Loc SettingsDisplayTitle}">
                 <StackPanel>
                     <DockPanel Style="{StaticResource SliderPanelStyle}">
@@ -282,6 +396,12 @@
                             Style="{StaticResource SliderTextStyle}"
                             Text="{Binding EnemyScale, Source={x:Static local:Settings.Default}, StringFormat={}{0}%}" />
                     </DockPanel>
+                    <Separator Style="{StaticResource ResetToDefaultSeparatorStyle}" />
+                    <Button
+                        Name="ButtonResetOpponentDisplay"
+                        Click="ButtonResetOpponentDisplay_Click"
+                        Content="{lex:Loc DisplayResetButton}"
+                        Style="{StaticResource ResetToDefaultButtonStyle}" />
                 </StackPanel>
             </GroupBox>
         </StackPanel>

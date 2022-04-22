@@ -123,6 +123,9 @@
   <data name="DeathrattleDescription" xml:space="preserve">
     <value>Show player deathrattle minions that have died</value>
   </data>
+  <data name="DisplayResetButton" xml:space="preserve">
+    <value>Reset to Default</value>
+  </data>
   <data name="Friendly" xml:space="preserve">
     <value>Player</value>
   </data>
@@ -189,6 +192,12 @@ Go to Settings for the full list of cards supported</value>
   <data name="PluginReleases" xml:space="preserve">
     <value>Latest Release</value>
   </data>
+  <data name="PositionResetButton" xml:space="preserve">
+    <value>Reset to Default</value>
+  </data>
+  <data name="PositionTitle" xml:space="preserve">
+    <value>Position</value>
+  </data>
   <data name="Questline" xml:space="preserve">
     <value>Questline</value>
   </data>
@@ -213,8 +222,14 @@ Go to Settings for the full list of cards supported</value>
   <data name="SettingsDisplayTitle" xml:space="preserve">
     <value>Display</value>
   </data>
+  <data name="SettingsHorizontal" xml:space="preserve">
+    <value>Horizontal</value>
+  </data>
   <data name="SettingsTitle" xml:space="preserve">
     <value>Graveyard Settings</value>
+  </data>
+  <data name="SettingsVertical" xml:space="preserve">
+    <value>Vertical</value>
   </data>
   <data name="SI7" xml:space="preserve">
     <value>SI:7</value>
