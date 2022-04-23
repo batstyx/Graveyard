@@ -101,6 +101,8 @@
                 TargetType="Button">
                 <Setter Property="Width" Value="150" />
                 <Setter Property="Height" Value="10" />
+                <Setter Property="HorizontalAlignment" Value="Right" />
+                <Setter Property="Margin" Value="0,0,10,0" />
             </Style>
             <Style x:Key="CheckboxStyle" TargetType="CheckBox">
                 <Setter Property="Margin" Value="12,0,0,4" />
@@ -162,8 +164,8 @@
             </TextBlock>
         </Grid>
     </Expander>
+    <Grid Grid.Row="2">
     <Expander
-        Grid.Row="2"
         Header="{lex:Loc Friendly}"
         Style="{StaticResource ExpanderStyle}">
         <StackPanel>
@@ -225,12 +227,6 @@
                             Style="{StaticResource SliderTextStyle}"
                             Text="{Binding PlayerTop, Source={x:Static local:Settings.Default}, StringFormat={}{0}%}" />
                     </DockPanel>
-                    <Separator Style="{StaticResource ResetToDefaultSeparatorStyle}" />
-                    <Button
-                        Name="ButtonResetPlayerPosition"
-                        Click="ButtonResetPlayerPosition_Click"
-                        Content="{lex:Loc PositionResetButton}"
-                        Style="{StaticResource ResetToDefaultButtonStyle}" />
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="{lex:Loc SettingsDisplayTitle}">
@@ -296,6 +292,13 @@
             </GroupBox>
         </StackPanel>
     </Expander>
+        <Button
+                        Name="ButtonResetPlayerPosition"
+                        Click="ButtonResetPlayerPosition_Click"
+                        Content="{lex:Loc PositionResetButton}"
+                        Style="{StaticResource ResetToDefaultButtonStyle}" />
+
+    </Grid>
     <Expander
         Grid.Row="3"
         Header="{lex:Loc Opponent}"

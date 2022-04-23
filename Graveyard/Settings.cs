@@ -7,6 +7,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hearthstone_Deck_Tracker.API;
+using APICore = Hearthstone_Deck_Tracker.API.Core;
+using System.Windows;
 
 namespace HDT.Plugins.Graveyard
 {
@@ -165,6 +168,27 @@ namespace HDT.Plugins.Graveyard
                 }
                 Default.Version = upgradeVersion.ToString();
             }
+            //upgradeVersion = new Version(1, 10, 1);
+            //if (upgradeVersion.CompareTo(new Version(Default.Version)) > 0)
+            //{
+            //    var ScreenWidth = SystemParameters.VirtualScreenWidth;
+            //    var ScreenHeight = SystemParameters.VirtualScreenHeight;
+            //    if (APICore.Game.IsRunning)
+            //    {
+            //        ScreenWidth = APICore.OverlayWindow.Width;
+            //        ScreenHeight = APICore.OverlayWindow.Height;
+            //    }
+
+            //    var SetPercentage = new Func<double, double, double>((position, size) => position < size ? position / size * 100 : 0);
+
+            //    Default.PlayerLeft = SetPercentage(Default.PlayerLeft, ScreenWidth);
+            //    Default.PlayerTop = SetPercentage(Default.PlayerTop, ScreenHeight);
+
+            //    Default.EnemyLeft = SetPercentage(Default.EnemyLeft, ScreenWidth);
+            //    Default.EnemyTop = SetPercentage(Default.EnemyTop, ScreenHeight);
+
+            //    Default.Version = upgradeVersion.ToString();
+            //}
         }
     }
 }

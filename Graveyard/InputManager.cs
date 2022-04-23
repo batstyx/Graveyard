@@ -58,12 +58,12 @@ namespace HDT.Plugins.Graveyard
 			var p = Core.OverlayCanvas.PointFromScreen(new Point(pos.X, pos.Y));
 			if (_selected == "player")
 			{
-				Settings.Default.PlayerTop = p.Y;
-				Settings.Default.PlayerLeft = p.X;
+				Settings.Default.PlayerTop = p.Y / Core.OverlayWindow.Height;
+				Settings.Default.PlayerLeft = p.X / Core.OverlayWindow.Width;
 			} else if (_selected == "enemy")
 			{
-				Settings.Default.EnemyTop = p.Y;
-				Settings.Default.EnemyLeft = p.X;
+				Settings.Default.EnemyTop = p.Y / Core.OverlayWindow.Height;
+				Settings.Default.EnemyLeft = p.X / Core.OverlayWindow.Width;
 			}
 
 			_selected = null;
