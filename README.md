@@ -1,6 +1,6 @@
 [![Latest Release](https://img.shields.io/github/release-pre/batstyx/Graveyard.svg)](https://github.com/batstyx/Graveyard/releases)
 
-![Build Status](https://github.com/batstyx/graveyard/actions/workflows/main.yml/badge.svg)
+[![Build Status](https://github.com/batstyx/graveyard/actions/workflows/main.yml/badge.svg)](https://github.com/batstyx/graveyard/actions/workflows/main.yml)
 
 Forked from [RedHatter/Graveyard](https://github.com/RedHatter/Graveyard) 
 (see there for instructions/details)
