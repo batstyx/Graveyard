@@ -196,6 +196,9 @@ This version built from https://github.com/batstyx/Graveyard</value>
   <data name="QuestlineDescription" xml:space="preserve">
     <value>Show player questline progress</value>
   </data>
+  <data name="Reanimate" xml:space="preserve">
+    <value>Undead</value>
+  </data>
   <data name="Resurrect" xml:space="preserve">
     <value>Resurrect</value>
   </data>

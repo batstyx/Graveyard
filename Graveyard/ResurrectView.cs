@@ -9,6 +9,8 @@ namespace HDT.Plugins.Graveyard
 		internal static ViewConfig Config
 		{
 			get => _Config ?? (_Config = new ViewConfig(
+                Druid.UnendingSwarm,
+                Priest.AnimateDead,
 				Warlock.HabeasCorpses,
 				Priest.RaiseDead, 
 				Priest.Psychopomp, 
@@ -17,7 +19,7 @@ namespace HDT.Plugins.Graveyard
 				Priest.CatrinaMuerte,
 				Priest.Resurrect,
 				Priest.OnyxBishop,
-                Priest.EternalServitudeCore,
+                Priest.EternalServitudeICECROWN,
                 Priest.LesserDiamondSpellstone,
 				Neutral.Kazakus)
             {
