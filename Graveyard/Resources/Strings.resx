@@ -202,6 +202,9 @@ This version built from https://github.com/batstyx/Graveyard</value>
   <data name="Reanimate" xml:space="preserve">
     <value>Undead</value>
   </data>
+  <data name="Relic" xml:space="preserve">
+    <value>Relics Cast</value>
+  </data>
   <data name="Resurrect" xml:space="preserve">
     <value>Resurrect</value>
   </data>
