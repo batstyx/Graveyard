@@ -53,7 +53,7 @@ namespace HDT.Plugins.Graveyard
 
         internal static ViewConfig VanessaVanCleefConfig
         {
-            get => _VanessaVanCleefConfig ?? (_VanessaVanCleefConfig = new ViewConfig(Rogue.VanessaVancleefCore)
+            get => _VanessaVanCleefConfig ?? (_VanessaVanCleefConfig = new LastCardView.ViewConfig(Rogue.VanessaVancleefCore)
             {
                 Name = "VanessaVanCleef",
                 UpdateOn = GameEvents.OnOpponentPlay,
@@ -72,5 +72,16 @@ namespace HDT.Plugins.Graveyard
             });
         }
         private static ViewConfig _LadyDarkveinConfig;
+
+        internal static ViewConfig AsvedonConfig
+        {
+            get => _AsvedonConfig ?? (_AsvedonConfig = new LastCardView.ViewConfig(Warrior.AsvedonTheGrandshield)
+            {
+                Name = "Asvedon",
+                UpdateOn = GameEvents.OnOpponentPlay,
+                Condition = card => card.Type == "Spell",
+            });
+        }
+        private static ViewConfig _AsvedonConfig;
     }
 }
