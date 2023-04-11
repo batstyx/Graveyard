@@ -62,6 +62,8 @@ namespace HDT.Plugins.Graveyard
 			FourHorsemenView.Config,
 			RelicView.Config,
 			LastPlayedView.AsvedonConfig,
+			StranglethornHeartView.Config,
+			MixtapeView.Config,
         };
 
 		private readonly StackPanel FriendlyPanel;
