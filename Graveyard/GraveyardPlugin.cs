@@ -1,3 +1,4 @@
+using HDT.Plugins.Graveyard.Properties;
 using Hearthstone_Deck_Tracker;
 using Hearthstone_Deck_Tracker.API;
 using Hearthstone_Deck_Tracker.Hearthstone;
@@ -14,19 +15,19 @@ namespace HDT.Plugins.Graveyard
         internal static EventManager Events { get; private set; }
         internal static Graveyard Graveyard { get; private set; }
         public string Author => "RedHatter";
-        public string ButtonText => Strings.GetLocalized("Settings");
+        public string ButtonText => Strings.GetLocalized(nameof(Resources.Strings.Settings));
 
-        public string Description => Strings.GetLocalized("GraveyardDescription");
+        public string Description => Strings.GetLocalized(nameof(Resources.Strings.GraveyardDescription));
 
         public MenuItem MenuItem { get; set; }
-        public string Name => "Graveyard";
+        public string Name => LibraryInfo.Name;
 
         public void OnButtonPress() => SettingsView.Flyout.IsOpen = true;
         public void OnLoad()
         {
             Settings = Settings.Default;
 
-            MenuItem = new MenuItem { Header = Strings.GetLocalized("Graveyard") };
+            MenuItem = new MenuItem { Header = Strings.GetLocalized(nameof(Resources.Strings.Graveyard)) };
             MenuItem.Click += (sender, args) => OnButtonPress();
 
             Events = new EventManager();
@@ -91,8 +92,6 @@ namespace HDT.Plugins.Graveyard
             Graveyard?.Update();
         }
 
-        public static readonly Version AssemblyVersion = Assembly.GetExecutingAssembly().GetName().Version;
-        public static readonly Version PluginVersion = new Version(AssemblyVersion.Major, AssemblyVersion.Minor, AssemblyVersion.Build);
-        public Version Version => PluginVersion;
+        public Version Version => LibraryInfo.Version;
     }
 }
