@@ -16,8 +16,8 @@ jobs:
       - uses: actions/checkout@v3.5.2 # https://github.com/marketplace/actions/checkout
       - id: get_head_commit
         run: |
-          echo "title=$(powershell "git log --format=%B -n 1 HEAD | Select -First 1")" >> $GITHUB_OUTPUT
-          echo "body=$(powershell "git log --format=%B -n 1 HEAD | Select -Skip 1")" >> $GITHUB_OUTPUT
+          echo "title=$(powershell 'git log --format=%B -n 1 HEAD | Select -First 1")' >> $GITHUB_OUTPUT
+          echo "body=$(powershell 'git log --format=%B -n 1 HEAD | Select -Skip 1")' >> $GITHUB_OUTPUT
       - uses: microsoft/setup-msbuild@v1.3.1 # https://github.com/marketplace/actions/setup-msbuild
       - uses: NuGet/setup-nuget@v1.2.0 # https://github.com/marketplace/actions/setup-nuget-exe-for-use-with-actions
       - run: .\scripts\update-libraries.ps1
