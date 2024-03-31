@@ -76,6 +76,7 @@ namespace HDT.Plugins.Graveyard
 			OgreGangView.Config,
 			AzeriteRatView.Config,
 			LastPlayedView.EndgameConfig,
+			JepettoView.Config,
         };
 
 		private readonly FrameworkElement FriendlyView;

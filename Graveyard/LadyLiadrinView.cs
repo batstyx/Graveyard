@@ -54,7 +54,7 @@ namespace HDT.Plugins.Graveyard
             Paladin.SealOfBlood,
             Paladin.SealOfChampions,
             // 4
-            Paladin.BlessingOfKingsCore,
+            Paladin.BlessingOfKingsLegacy,
             //Paladin.HammerOfWrath,
             Paladin.SilvermoonPortalKARA,
             // 5
