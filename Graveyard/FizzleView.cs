@@ -1,4 +1,5 @@
-﻿using Hearthstone_Deck_Tracker.API;
+﻿using HearthDb.Enums;
+using Hearthstone_Deck_Tracker.API;
 using Hearthstone_Deck_Tracker.Hearthstone;
 using System.Linq;
 using System.Windows;
@@ -28,7 +29,7 @@ namespace HDT.Plugins.Graveyard
 
             if (card.Id == FizzleId)
             {
-                Cards.AddRange(Core.Game.Player.Hand.Select(e => Database.GetCardFromId(e.CardId)));
+                Cards.AddRange(Core.Game.Player.Hand.OrderBy(e => e.ZonePosition).Select(e => Database.GetCardFromId(e.CardId)));
             }
             else if (card.Id == SnapshotId)
             {
