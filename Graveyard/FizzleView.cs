@@ -31,7 +31,10 @@ namespace HDT.Plugins.Graveyard
             {
                 Cards.AddRange(Core.Game.Player.Hand.OrderBy(e => e.ZonePosition).Select(e => Database.GetCardFromId(e.CardId)));
             }
-            else if (card.Id == SnapshotId)
+            else if (card.Id == SnapshotId 
+                && Core.Game.Player.PlayerEntities
+                .Where(x => x.CardId == SnapshotId && (x.IsInHand || x.IsInDeck))
+                .Count() == 0)
             {
                 Cards.Clear();
             }
