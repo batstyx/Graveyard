@@ -149,7 +149,7 @@ namespace HDT.Plugins.Graveyard
 			Input.Dispose();
 		}
 
-		public void Clear()
+		public void ClearUI()
         {
 			FriendlyPanel.Children.Clear();
 			EnemyPanel.Children.Clear();
@@ -178,12 +178,17 @@ namespace HDT.Plugins.Graveyard
             }
         }
 
+		private IEnumerable<Card> _PlayerCardList = null;
+		private IEnumerable<Card> PlayerCardList => _PlayerCardList ?? (_PlayerCardList = Core.Game.Player.PlayerCardList);
+
 		/**
 		* Clear then recreate all Views.
 		*/
 		public void Reset()
 		{
-			Clear();
+			ClearUI();
+
+			_PlayerCardList = null;
 
 			if ((Core.Game.IsInMenu && Hearthstone_Deck_Tracker.Config.Instance.HideInMenu) || Core.Game.IsBattlegroundsMatch || Core.Game.IsMercenariesMatch)
 			{
@@ -217,7 +222,7 @@ namespace HDT.Plugins.Graveyard
             // Show "demo mode" when overlay is visible in menu
 			if (Core.Game.IsInMenu)
             {
-                foreach (var card in Core.Game.Player.PlayerCardList)
+                foreach (var card in PlayerCardList)
                 {
 					if (card != null)
                     {
@@ -233,7 +238,7 @@ namespace HDT.Plugins.Graveyard
 
 		private ViewBase InitializeView(Panel parent, ViewConfig config, bool isDefault = false)
         {
-			var view = new ViewBuilder(config, Core.Game.Player.PlayerCardList).BuildView();
+			var view = new ViewBuilder(config, PlayerCardList).BuildView();
 			if (view == null) return null;
 
 			config.RegisterView(view, isDefault);
