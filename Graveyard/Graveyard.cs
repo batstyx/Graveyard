@@ -1,10 +1,9 @@
-using Hearthstone_Deck_Tracker.API;
-using Hearthstone_Deck_Tracker.Enums;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using static HearthDb.CardIds.Collectible;
 using Card = Hearthstone_Deck_Tracker.Hearthstone.Card;
 using Core = Hearthstone_Deck_Tracker.API.Core;
 
@@ -179,18 +178,22 @@ namespace HDT.Plugins.Graveyard
         }
 
 		private IEnumerable<Card> _PlayerCardList = null;
-		private IEnumerable<Card> PlayerCardList => _PlayerCardList ?? (_PlayerCardList = Core.Game.Player.PlayerCardList);
+		private IEnumerable<Card> PlayerCardList => _PlayerCardList ?? (_PlayerCardList = Core.Game.Player.PlayerCardList.Concat(PlayerETCBand));
+		private IEnumerable<Card> PlayerETCBand => Core.Game.Player.PlayerSideboardsDict
+			.Where(s => s.OwnerCardId == Neutral.ETCBandManager)
+			.FirstOrDefault()
+			.Cards;
 
-		/**
+        /**
 		* Clear then recreate all Views.
 		*/
-		public void Reset()
+        public void Reset()
 		{
 			ClearUI();
 
 			_PlayerCardList = null;
 
-			if ((Core.Game.IsInMenu && Hearthstone_Deck_Tracker.Config.Instance.HideInMenu) || Core.Game.IsBattlegroundsMatch || Core.Game.IsMercenariesMatch)
+            if ((Core.Game.IsInMenu && Hearthstone_Deck_Tracker.Config.Instance.HideInMenu) || Core.Game.IsBattlegroundsMatch || Core.Game.IsMercenariesMatch)
 			{
 				// don't initialize in menu unless the overlay is visible
 				// don't show graveyard for Battlegrounds or Mercenaries
