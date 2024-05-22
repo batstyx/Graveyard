@@ -76,6 +76,7 @@ namespace HDT.Plugins.Graveyard
 			AzeriteRatView.Config,
 			LastPlayedView.EndgameConfig,
 			JepettoView.Config,
+			InventorBoomView.Config,
         };
 
 		private readonly FrameworkElement FriendlyView;
