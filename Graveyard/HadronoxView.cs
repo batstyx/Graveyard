@@ -9,7 +9,7 @@ namespace HDT.Plugins.Graveyard
 		private static ViewConfig _Config;
 		internal static ViewConfig Config
 		{
-			get => _Config ?? (_Config = new ViewConfig(Druid.HadronoxICECROWN)
+			get => _Config ?? (_Config = new ViewConfig(Druid.Hadronox)
             {
 				Name = "Hadronox",
 				Enabled = "HadronoxEnabled",

@@ -11,7 +11,7 @@ namespace HDT.Plugins.Graveyard
             get => _Config ?? (_Config = new ViewConfig(
                 Druid.WitchingHour, 
                 Hunter.RevivePet, 
-                Hunter.AbominableBowmanICECROWN)
+                Hunter.AbominableBowman)
             {
                 Name = "WitchingHour",
                 Enabled = "WitchingHourEnabled",
