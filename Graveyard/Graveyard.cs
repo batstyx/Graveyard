@@ -180,10 +180,9 @@ namespace HDT.Plugins.Graveyard
 
 		private IEnumerable<Card> _PlayerCardList = null;
 		private IEnumerable<Card> PlayerCardList => _PlayerCardList ?? (_PlayerCardList = Core.Game.Player.PlayerCardList.Concat(PlayerETCBand));
-		private IEnumerable<Card> PlayerETCBand => Core.Game.Player.PlayerSideboardsDict
-			.Where(s => s.OwnerCardId == Neutral.ETCBandManager)
-			.FirstOrDefault()
-			.Cards;
+		private IEnumerable<Card> PlayerETCBand => Core.Game.Player.PlayerSideboardsDict?
+    			.Where(s => s.OwnerCardId == Neutral.ETCBandManager)
+   			.FirstOrDefault()?.Cards ?? Enumerable.Empty<Card>();
 
         /**
 		* Clear then recreate all Views.
