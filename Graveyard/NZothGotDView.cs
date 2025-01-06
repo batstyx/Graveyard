@@ -14,7 +14,7 @@ namespace HDT.Plugins.Graveyard
 				Enabled = "NZothGotDEnabled",
 				CreateView = () => new ChancesView(),
 				UpdateOn = GameEvents.OnPlayerPlayToGraveyard,
-				Condition = card => card.Race != null,
+				Condition = card => card.Type == "Minion" && card.Race != null,
 			});
 		}	
 	}
