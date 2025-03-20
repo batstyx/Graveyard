@@ -69,7 +69,7 @@ namespace HDT.Plugins.Graveyard
             {
                 Name = "LadyDarkvein",
                 UpdateOn = GameEvents.OnPlayerPlayToGraveyard,
-                Condition = card => (card.SpellSchool == SpellSchool.SHADOW),
+                Condition = card => (card.GetSchool() == School.Shadow),
             });
         }
         private static ViewConfig _LadyDarkveinConfig;
