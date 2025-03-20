@@ -1,6 +1,6 @@
 using Hearthstone_Deck_Tracker;
+using Hearthstone_Deck_Tracker.Commands;
 using Hearthstone_Deck_Tracker.Hearthstone;
-using Hearthstone_Deck_Tracker.Utility;
 using MahApps.Metro.Controls;
 using System;
 using System.Collections;
