@@ -35,7 +35,7 @@ namespace HDT.Plugins.Graveyard
         {
             if (!Condition(card)) return false;
 
-            Cards.Update(new List<Card> { card.Clone() as Card }, false);
+            Cards.Update(new List<Card> { card.Clone() as Card }, false).GetAwaiter().GetResult();;
 
             Visibility = Visibility.Visible;
 
