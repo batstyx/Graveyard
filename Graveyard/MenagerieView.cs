@@ -59,7 +59,7 @@ namespace HDT.Plugins.Graveyard
                 RaceList.Add(race, card.Clone() as Card);
             }
 
-            Cards.Update(RaceList.Values.ToList(), true).GetAwaiter().GetResult();;
+            Cards.Update(RaceList.Values.ToList(), true).GetAwaiter().GetResult();
 
             Visibility = Visibility.Visible;
 
