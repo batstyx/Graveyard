@@ -39,7 +39,7 @@ namespace HDT.Plugins.Graveyard
 			{
 				Cards.Add(card.Clone() as Card);
 			}
-			View.Update(Cards, false);
+			View.Update(Cards, false).GetAwaiter().GetResult();
 
 			Visibility = Visibility.Visible;
 
