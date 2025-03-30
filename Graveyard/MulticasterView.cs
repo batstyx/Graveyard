@@ -60,7 +60,7 @@ namespace HDT.Plugins.Graveyard
                     SchoolList.Add(school, card.Clone() as Card);                        
                 }
 
-                Cards.Update(SchoolList.Values.ToList(), true);
+                Cards.Update(SchoolList.Values.ToList(), true).GetAwaiter().GetResult();;
 
                 Visibility = Visibility.Visible;
 
