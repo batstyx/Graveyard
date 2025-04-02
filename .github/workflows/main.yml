@@ -1,6 +1,6 @@
-name: Build+Release on PR
+name: Build+Release
 on:
-  pull_request:
+  push:
     branches: [ master ]
   workflow_dispatch:
 
