@@ -33,9 +33,9 @@ jobs:
         # https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
         # https://stackoverflow.com/a/74377542/146360
       - run: msbuild.exe "${{ env.PROJECT }}.sln" /p:platform="x86" /p:configuration="Release"
-      - id: create_zip
+      - id: name_zip
         run: |
-          $zipName = "${{ env.PROJECT }}-v${{ steps.set_version.outputs.buildVersion }}.zip"
+          $zipName = "${{ env.PROJECT }}-v${{ steps.set_version.outputs.buildVersion }}"
           echo "zipName=$zipName" >> $env:GITHUB_OUTPUT
       - uses: actions/upload-artifact@v4.6.2 # https://github.com/marketplace/actions/upload-a-build-artifact
         with:
