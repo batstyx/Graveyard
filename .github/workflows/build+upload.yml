@@ -36,8 +36,10 @@ jobs:
       - id: create_zip
         run: |
           $zipName = "${{ env.PROJECT }}-v${{ steps.set_version.outputs.buildVersion }}.zip"
-          7z a $zipName .\${{ env.PROJECT }}\bin\x86\Release\${{ env.PROJECT }}.dll .\${{ env.PROJECT }}\bin\x86\Release\*-*
           echo "zipName=$zipName" >> $env:GITHUB_OUTPUT
       - uses: actions/upload-artifact@v4.6.2 # https://github.com/marketplace/actions/upload-a-build-artifact
         with:
-          path: "${{ steps.create_zip.outputs.zipName }}"
+          name: "${{ steps.create_zip.outputs.zipName }}"
+          path: |
+            .\${{ env.PROJECT }}\bin\x86\Release\${{ env.PROJECT }}.dll 
+            .\${{ env.PROJECT }}\bin\x86\Release\*-*
