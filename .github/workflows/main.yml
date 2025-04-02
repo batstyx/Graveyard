@@ -1,9 +1,7 @@
-name: Build+Release on Push/PR
+name: Build+Release
 on:
   push:
     branches: [ batstyx ]
-  pull_request:
-    branches: [ master ]
   workflow_dispatch:
 
 env: 
