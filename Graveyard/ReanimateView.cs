@@ -10,7 +10,7 @@ namespace HDT.Plugins.Graveyard
         {
             get => _Config ?? (_Config = new ViewConfig(
                 Priest.Bonecaller,
-                Priest.CatrinaMuerteCore, 
+                Priest.CatrinaMuerte, 
                 Warlock.InfantryReanimator)
             {
                 Name = "Reanimate",

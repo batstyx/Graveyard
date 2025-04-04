@@ -68,7 +68,7 @@ namespace HDT.Plugins.Graveyard
             if (ClearOnNextTurn)
             {
                 Cards.Clear();
-                await View.UpdateAsync(Cards, true);
+                await View.Update(Cards, true);
                 ClearOnNextTurn = false;
             }
         }

@@ -27,7 +27,7 @@ namespace HDT.Plugins.Graveyard
                         FontSize = 18,
                         TextAlignment = TextAlignment.Left
                     };
-					if (View.Items.GetItemAt(i) is UserControl control && control.Content is Grid grid)
+					if (View.AnimatedCards[i] is UserControl control && control.Content is Grid grid)
 					{
 						grid.Width = 260;
 						if (grid.Children[0] is Hearthstone_Deck_Tracker.Controls.Card cardControl)

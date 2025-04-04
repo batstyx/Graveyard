@@ -80,7 +80,7 @@ namespace HDT.Plugins.Graveyard
             var tasks = new List<Task>();
             for (int i = 0; i < Turns + 1; i++)
             {
-                tasks.Add(Views[i].Cards.UpdateAsync(CardLists[i], true));
+                tasks.Add(Views[i].Cards.Update(CardLists[i], true));
             }
 
             await Task.WhenAll(tasks);
