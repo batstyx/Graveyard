@@ -192,6 +192,7 @@
                 ToolTip="{lex:Loc FriendlyDescription}" />
             <mah:ToggleSwitch
                 Content="{lex:Loc Questline}"
+                Visibility="{Binding QuestlineVisibility, Source={x:Static local:Settings.Default}}"
                 IsChecked="{Binding FriendlyQuestlineEnabled, Source={x:Static local:Settings.Default}}"
                 Style="{StaticResource ToggleStyle}"
                 ToolTip="{lex:Loc QuestlineDescription}" />
@@ -316,6 +317,7 @@
                 ToolTip="{lex:Loc OpponentDescription}" />
             <mah:ToggleSwitch
                 Content="{lex:Loc Questline}"
+                Visibility="{Binding QuestlineVisibility, Source={x:Static local:Settings.Default}}"
                 IsChecked="{Binding EnemyQuestlineEnabled, Source={x:Static local:Settings.Default}}"
                 Style="{StaticResource ToggleStyle}"
                 ToolTip="{lex:Loc OpponentQuestlineDescription}" />

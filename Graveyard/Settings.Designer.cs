@@ -12,7 +12,7 @@ namespace HDT.Plugins.Graveyard {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.9.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.14.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -517,7 +517,7 @@ namespace HDT.Plugins.Graveyard {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool FriendlyQuestlineEnabled {
             get {
                 return ((bool)(this["FriendlyQuestlineEnabled"]));
@@ -529,7 +529,7 @@ namespace HDT.Plugins.Graveyard {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool EnemyQuestlineEnabled {
             get {
                 return ((bool)(this["EnemyQuestlineEnabled"]));
@@ -656,6 +656,18 @@ namespace HDT.Plugins.Graveyard {
             }
             set {
                 this["ChancesViewLeft"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Collapsed")]
+        public global::System.Windows.Visibility QuestlineVisibility {
+            get {
+                return ((global::System.Windows.Visibility)(this["QuestlineVisibility"]));
+            }
+            set {
+                this["QuestlineVisibility"] = value;
             }
         }
     }
