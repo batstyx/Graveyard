@@ -1,17 +1,17 @@
 ﻿using Hearthstone_Deck_Tracker.Hearthstone;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HDT.Plugins.Graveyard
 {
     internal class ViewConfigCard
     {
-        public string CardId { get; internal set; }
+        public Card Card { get; private set; }
+        public string CardId => Card.Id;
+        public string CardName => Card.Name;
         public bool IsEnabled { get; internal set; }
+        public ViewConfigCard(Card card, bool isEnabled)
+        {
+            Card = card;
+            IsEnabled = isEnabled;
+        }
     }
 }

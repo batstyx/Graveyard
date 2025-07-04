@@ -26,8 +26,8 @@ namespace HDT.Plugins.Graveyard
             if (Config.ShowOn == null) return new List<Card>();
 
             return new List<Card>(from playerCard in PlayerCards
-                                  join cardId in Config.ShowOn
-                                  on playerCard.Id equals cardId
+                                  join cardName in Config.ShowOn
+                                  on playerCard.Name equals cardName
                                   select playerCard);
         }
 
