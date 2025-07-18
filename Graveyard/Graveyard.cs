@@ -209,18 +209,26 @@ namespace HDT.Plugins.Graveyard
 			FriendlyPanel.Children.Add(FirstPanel);
             
 			InitializeView(FriendlyPanel, GraveyardView.FriendlyConfig, true);
-			
-			foreach (var config in ConfigList)
-            {
-                if (config.ShowFirst())
-                {
-					InitializeView(FirstPanel, config);
-				}
-				else
-                {
-					InitializeView(FriendlyPanel, config);
+
+			if (Settings.Default.CardsEnabled)
+			{
+				foreach (var config in ConfigList)
+				{
+					if (config.ShowFirst())
+					{
+						InitializeView(FirstPanel, config);
+					}
+					else
+					{
+						InitializeView(FriendlyPanel, config);
+					}
 				}
 			}
+			else 
+			{
+                InitializeView(FriendlyPanel, ResurrectView.Config);
+                InitializeView(FriendlyPanel, DeathrattleView.PlayerConfig);
+            }
 
             // Show "demo mode" when overlay is visible in menu
 			if (Core.Game.IsInMenu)
@@ -241,7 +249,7 @@ namespace HDT.Plugins.Graveyard
 
 		private ViewBase InitializeView(Panel parent, ViewConfig config, bool isDefault = false)
         {
-			var view = new ViewBuilder(config, PlayerCardList).BuildView();
+			var view = new ViewBuilder(config, PlayerCardList).BuildView(!Settings.Default.CardsEnabled);
 			if (view == null) return null;
 
 			config.RegisterView(view, isDefault);

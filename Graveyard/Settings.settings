@@ -164,5 +164,8 @@
     <Setting Name="QuestlineVisibility" Type="System.Windows.Visibility" Scope="User">
       <Value Profile="(Default)">Collapsed</Value>
     </Setting>
+    <Setting Name="CardsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

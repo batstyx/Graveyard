@@ -206,6 +206,11 @@
                 IsChecked="{Binding DeathrattleEnabled, Source={x:Static local:Settings.Default}}"
                 Style="{StaticResource ToggleStyle}"
                 ToolTip="{lex:Loc DeathrattleDescription}" />
+            <mah:ToggleSwitch
+                Content="{lex:Loc Cards}"
+                IsChecked="{Binding CardsEnabled, Source={x:Static local:Settings.Default}}"
+                Style="{StaticResource ToggleStyle}"
+                ToolTip="{lex:Loc CardsDescription}" />
             <GroupBox Header="{Binding PlayerPositionGroup, RelativeSource={RelativeSource AncestorType=Grid}}" Style="{StaticResource PositionGroupStyle}">
                 <StackPanel>
                     <DockPanel Style="{StaticResource SliderPanelStyle}">

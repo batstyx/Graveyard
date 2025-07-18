@@ -670,5 +670,17 @@ namespace HDT.Plugins.Graveyard {
                 this["QuestlineVisibility"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CardsEnabled {
+            get {
+                return ((bool)(this["CardsEnabled"]));
+            }
+            set {
+                this["CardsEnabled"] = value;
+            }
+        }
     }
 }

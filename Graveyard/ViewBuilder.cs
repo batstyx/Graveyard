@@ -33,11 +33,11 @@ namespace HDT.Plugins.Graveyard
 
         public bool Enabled => string.IsNullOrEmpty(Config.Enabled) || (bool)Settings.Default[Config.Enabled];
 
-        public ViewBase BuildView()
+        public ViewBase BuildView(bool overrideBuild = false)
         {
             if (!Enabled) return null;
 
-            if (Config.ShowOn == null || ActiveCards.Count() > 0)
+            if (overrideBuild || Config.ShowOn == null || ActiveCards.Count() > 0)
             {
                 var view = Config.CreateView();
                 view.Title = Config.UseSoloCardNameAsTitle && ActiveCards.Count == 1 ? ActiveCards.First().LocalizedName : Strings.GetLocalized(Config.Name);
