@@ -72,9 +72,9 @@ namespace HDT.Plugins.Graveyard.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Show player card lists based on player starting deck contents.
         /// </summary>
-        public static string CardsDescriptions {
+        public static string CardsDescription {
             get {
-                return ResourceManager.GetString("CardsDescriptions", resourceCulture);
+                return ResourceManager.GetString("CardsDescription", resourceCulture);
             }
         }
         

@@ -120,7 +120,7 @@
   <data name="Cards" xml:space="preserve">
     <value>Cards</value>
   </data>
-  <data name="CardsDescriptions" xml:space="preserve">
+  <data name="CardsDescription" xml:space="preserve">
     <value>Show player card lists based on player starting deck contents</value>
   </data>
   <data name="Deathrattle" xml:space="preserve">
