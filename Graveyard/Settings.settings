@@ -126,10 +126,10 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="FriendlyQuestlineEnabled" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="EnemyQuestlineEnabled" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="MulticasterEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -160,6 +160,12 @@
     </Setting>
     <Setting Name="ChancesViewLeft" Type="System.Double" Scope="User">
       <Value Profile="(Default)">-42</Value>
+    </Setting>
+    <Setting Name="QuestlineVisibility" Type="System.Windows.Visibility" Scope="User">
+      <Value Profile="(Default)">Collapsed</Value>
+    </Setting>
+    <Setting Name="CardsEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

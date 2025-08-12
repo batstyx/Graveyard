@@ -61,6 +61,24 @@ namespace HDT.Plugins.Graveyard.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cards.
+        /// </summary>
+        public static string Cards {
+            get {
+                return ResourceManager.GetString("Cards", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show player card lists based on player starting deck contents.
+        /// </summary>
+        public static string CardsDescription {
+            get {
+                return ResourceManager.GetString("CardsDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deathrattle.
         /// </summary>
         public static string Deathrattle {
@@ -117,7 +135,6 @@ namespace HDT.Plugins.Graveyard.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Displays minions that have died this game. Includes specialized displays:
         ///
-        ///- Questline progress
         ///- Resurrection chance
         ///- Deathrattle minions
         ///

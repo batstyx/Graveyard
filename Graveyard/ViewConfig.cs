@@ -12,7 +12,7 @@ namespace HDT.Plugins.Graveyard
         public string Enabled { get; set; }
         public Func<bool> ShowFirst { get; set; } = () => false;
         public ActionList<Card> UpdateOn { get; set; }       
-        public IEnumerable<string> ShowOn => _ShowOnCards?.Where(c => c.IsEnabled).Select(c => c.CardId);
+        public IEnumerable<string> ShowOn => _ShowOnCards?.Where(c => c.IsEnabled).Select(c => c.CardName);
         public Predicate<Card> Condition { get; set; }        
         public Func<ViewBase> CreateView { get; set; }
         public bool UseSoloCardNameAsTitle { get; set; } = true;

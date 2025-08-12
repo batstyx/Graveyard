@@ -2,17 +2,14 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HDT.Plugins.Graveyard
 {
     internal class SettingsCard : INotifyPropertyChanged
     {
         public ViewConfigCard Config { get; private set; }
-        public Card Card { get; private set; }
+        public Card Card => Config.Card;
         public bool IsEnabled
         {
             get => _IsEnabled;
@@ -28,7 +25,6 @@ namespace HDT.Plugins.Graveyard
         public SettingsCard(ViewConfigCard config)
         {
             Config = config;
-            Card = Database.GetCardFromId(config.CardId);
             _IsEnabled = config.IsEnabled;
         }
 

@@ -52,7 +52,13 @@ namespace HDT.Plugins.Graveyard
 			var view = (ListCollectionView)CollectionViewSource.GetDefaultView(cards);
 			view.GroupDescriptions.Add(new PropertyGroupDescription("CardClass"));
 			view.CustomSort = new CardComparer();
-		}
+
+            CardDisplayGroup = new GroupHeader
+            {
+                Title = Strings.GetLocalized(nameof(ResourceStrings.SettingsCardsTitle)).ToUpper(),
+                Command = new Command(CardReset)
+            };
+        }
 
         public class GroupHeader
         {
@@ -79,6 +85,17 @@ namespace HDT.Plugins.Graveyard
             Title = Strings.GetLocalized(nameof(ResourceStrings.SettingsDisplayTitle)).ToUpper(),
             Command = new Command(Settings.Default.ResetOpponentDisplay)
         };
+
+        public GroupHeader CardDisplayGroup { get; private set; }
+
+        public void CardReset()
+        {
+            if (!(CardView.ItemsSource is ObservableCollection<SettingsCard> cards)) return;
+            foreach (var card in cards.Where(c => c.IsEnabled == false))
+            {
+                card.IsEnabled = true;
+            }
+        }
 
         public IEnumerable<Orientation> OrientationTypes => Enum.GetValues(typeof(Orientation)).Cast<Orientation>();
 

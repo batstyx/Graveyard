@@ -192,6 +192,7 @@
                 ToolTip="{lex:Loc FriendlyDescription}" />
             <mah:ToggleSwitch
                 Content="{lex:Loc Questline}"
+                Visibility="{Binding QuestlineVisibility, Source={x:Static local:Settings.Default}}"
                 IsChecked="{Binding FriendlyQuestlineEnabled, Source={x:Static local:Settings.Default}}"
                 Style="{StaticResource ToggleStyle}"
                 ToolTip="{lex:Loc QuestlineDescription}" />
@@ -205,6 +206,11 @@
                 IsChecked="{Binding DeathrattleEnabled, Source={x:Static local:Settings.Default}}"
                 Style="{StaticResource ToggleStyle}"
                 ToolTip="{lex:Loc DeathrattleDescription}" />
+            <mah:ToggleSwitch
+                Content="{lex:Loc Cards}"
+                IsChecked="{Binding CardsEnabled, Source={x:Static local:Settings.Default}}"
+                Style="{StaticResource ToggleStyle}"
+                ToolTip="{lex:Loc CardsDescription}" />
             <GroupBox Header="{Binding PlayerPositionGroup, RelativeSource={RelativeSource AncestorType=Grid}}" Style="{StaticResource PositionGroupStyle}">
                 <StackPanel>
                     <DockPanel Style="{StaticResource SliderPanelStyle}">
@@ -316,6 +322,7 @@
                 ToolTip="{lex:Loc OpponentDescription}" />
             <mah:ToggleSwitch
                 Content="{lex:Loc Questline}"
+                Visibility="{Binding QuestlineVisibility, Source={x:Static local:Settings.Default}}"
                 IsChecked="{Binding EnemyQuestlineEnabled, Source={x:Static local:Settings.Default}}"
                 Style="{StaticResource ToggleStyle}"
                 ToolTip="{lex:Loc OpponentQuestlineDescription}" />
@@ -407,7 +414,7 @@
     <GroupBox
         Grid.Row="4"
         Margin="5"
-        Header="{lex:Loc SettingsCardsTitle}">
+        Header="{Binding CardDisplayGroup, RelativeSource={RelativeSource AncestorType=Grid}}" Style="{StaticResource PositionGroupStyle}">
         <ListView
             x:Name="CardView"
             Grid.Row="1"

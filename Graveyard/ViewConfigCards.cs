@@ -1,8 +1,5 @@
-﻿using System;
+﻿using Hearthstone_Deck_Tracker.Hearthstone;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HDT.Plugins.Graveyard
 {
@@ -24,11 +21,7 @@ namespace HDT.Plugins.Graveyard
         }
         public ViewConfigCard Factory(string cardId)
         {
-            var tc = new ViewConfigCard()
-            {
-                CardId = cardId,
-                IsEnabled = IsEnabled(cardId)
-            };
+            var tc = new ViewConfigCard(Database.GetCardFromId(cardId), IsEnabled(cardId));
             Lookup.Add(tc.CardId, tc);
             return tc;
         }
