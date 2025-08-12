@@ -87,6 +87,7 @@
     <Compile Include="PositionHelpers.cs" />
     <Compile Include="Properties\LibraryInfo.cs" />
     <Compile Include="SettingsUpgrades\SettingsUpgradev0111.cs" />
+    <Compile Include="SettingsUpgrades\SettingsUpgradev0112.cs" />
     <Compile Include="TyrsTearsView.cs" />
     <Compile Include="ReanimateView.cs" />
     <Compile Include="CardUpdatePoller.cs" />

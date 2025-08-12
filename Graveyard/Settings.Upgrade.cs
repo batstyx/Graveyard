@@ -12,6 +12,7 @@ namespace HDT.Plugins.Graveyard
 		{
 			new SettingsUpgradev0110(),
             new SettingsUpgradev0111(),
+            new SettingsUpgradev0112(),
         };
 
 		public override void Upgrade()

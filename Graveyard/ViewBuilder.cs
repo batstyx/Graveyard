@@ -26,18 +26,18 @@ namespace HDT.Plugins.Graveyard
             if (Config.ShowOn == null) return new List<Card>();
 
             return new List<Card>(from playerCard in PlayerCards
-                                  join cardId in Config.ShowOn
-                                  on playerCard.Id equals cardId
+                                  join cardName in Config.ShowOn
+                                  on playerCard.Name equals cardName
                                   select playerCard);
         }
 
         public bool Enabled => string.IsNullOrEmpty(Config.Enabled) || (bool)Settings.Default[Config.Enabled];
 
-        public ViewBase BuildView()
+        public ViewBase BuildView(bool overrideBuild = false)
         {
             if (!Enabled) return null;
 
-            if (Config.ShowOn == null || ActiveCards.Count() > 0)
+            if (overrideBuild || Config.ShowOn == null || ActiveCards.Count() > 0)
             {
                 var view = Config.CreateView();
                 view.Title = Config.UseSoloCardNameAsTitle && ActiveCards.Count == 1 ? ActiveCards.First().LocalizedName : Strings.GetLocalized(Config.Name);
