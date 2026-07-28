@@ -32,7 +32,7 @@ jobs:
           echo "buildVersion=$buildVersion" >> $env:GITHUB_OUTPUT
         # https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
         # https://stackoverflow.com/a/74377542/146360
-      - run: msbuild.exe "${{ env.PROJECT }}.sln" /p:platform="x86" /p:configuration="Release"
+      - run: msbuild.exe "${{ env.PROJECT }}.sln" /p:platform="x64" /p:configuration="Release"
       - id: name_zip
         run: |
           $zipName = "${{ env.PROJECT }}-v${{ steps.set_version.outputs.buildVersion }}"
@@ -41,5 +41,5 @@ jobs:
         with:
           name: "${{ steps.name_zip.outputs.zipName }}"
           path: |
-            .\${{ env.PROJECT }}\bin\x86\Release\${{ env.PROJECT }}.dll 
-            .\${{ env.PROJECT }}\bin\x86\Release\*-*
+            .\${{ env.PROJECT }}\bin\x64\Release\${{ env.PROJECT }}.dll 
+            .\${{ env.PROJECT }}\bin\x64\Release\*-*
